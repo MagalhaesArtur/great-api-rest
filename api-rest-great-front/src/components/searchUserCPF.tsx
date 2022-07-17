@@ -19,7 +19,7 @@ function SearchUserCPF() {
         onSubmit={async (e) => {
           e.preventDefault();
           await axios
-            .get("http://localhost:3333/user", {
+            .get(import.meta.env.VITE_API_URL + "/user", {
               data: { cpf1 },
             })
             .then((response) => {
@@ -53,7 +53,7 @@ function SearchUserCPF() {
         ></button>
       </form>
       <div className="w-[70%] ">
-        {cpfList1.map((user) => (
+        {cpfList1.map((user: any) => (
           <div>
             <div>{user.nome}</div>
             <div>{user.dataNasc}</div>

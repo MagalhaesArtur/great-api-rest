@@ -5,9 +5,9 @@ import axios from "axios";
 
 function SearchUserByName() {
   const [name1, setName] = useState("");
-  const [nameList, setNameList] = useState([]);
+  const [nameList, setNameList]: any = useState([]);
 
-  const [cpfList1, setCpfList1] = useState([]);
+  const [cpfList1, setCpfList1]: any = useState([]);
 
   const [cpfErr, setCpfErr] = useState(false);
   console.log(cpfList1, "cu");
@@ -19,7 +19,7 @@ function SearchUserByName() {
         onSubmit={async (e) => {
           e.preventDefault();
           await axios
-            .get("http://localhost:3333/user", {
+            .get(import.meta.env.VITE_API_URL + "/user", {
               data: { name1 },
             })
             .then((response) => {
@@ -59,7 +59,7 @@ function SearchUserByName() {
         ></button>
       </form>
       <div className="w-[70%] ">
-        {cpfList1.map((user) => (
+        {cpfList1.map((user: any) => (
           <div>
             <div>{user.nome}</div>
             <div>{user.dataNasc}</div>

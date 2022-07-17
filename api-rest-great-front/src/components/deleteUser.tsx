@@ -7,7 +7,7 @@ function DeleteUser() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:3333/delete").then((response) => {
+    axios.get(import.meta.env.VITE_API_URL + "/delete").then((response) => {
       setUsers(response.data.users);
     });
   }, [loading]);
@@ -19,7 +19,7 @@ function DeleteUser() {
   } else {
     return (
       <div className="flex flex-col h-[70%]  items-center w-[80vw] overflow-y-scroll gap-y-11">
-        {users.map((user) => (
+        {users.map((user: any) => (
           <div className="flex w-[100%] gap-x-6 ">
             <div className="w-[15%]">{user.nome}</div>
             <div className="w-[15%]">{user.rg}</div>
@@ -33,7 +33,7 @@ function DeleteUser() {
                 setLoading(true);
 
                 await axios
-                  .delete("http://localhost:3333/delete", {
+                  .delete(import.meta.env.VITE_API_URL + "/delete", {
                     data: { cpf: user.cpf },
                   })
                   .then((response) => {

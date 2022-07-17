@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const api = axios.create({ baseURL: "http://localhost:3333" });
+export const api = axios.create({ baseURL: import.meta.env.VITE_API_URL });
 
 export const createUser = async ({
   nome,
@@ -11,10 +11,6 @@ export const createUser = async ({
   dataCadas,
 }: any) => {
   await api.post("/user", { nome, cpf, rg, dataNasc, nomeMae, dataCadas });
-};
-
-export const getUserByRG_or_CPF = async ({ cpf, rg }: any) => {
-  await api.get("/user", {cpf, rg });
 };
 
 export const deleteUser = async ({ cpf }: any) => {
