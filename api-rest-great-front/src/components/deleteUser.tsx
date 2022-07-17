@@ -17,10 +17,10 @@ function DeleteUser() {
     return <Loading />;
   } else {
     return (
-      <div className="flex flex-col overflow-x-scroll">
+      <div className="flex flex-col ">
         <div className="flex flex-col h-[70vh] overflow-x-scroll   items-center  overflow-y-scroll gap-y-11">
           <div className="flex gap-x-4 w-full text-white font-bold text-base">
-            <div className="block whitespace-nowr'ap">NOME</div>
+            <div className="block whitespace-nowrap w-[15%]">NOME</div>
             <div className="block whitespace-nowrap">RG</div>
             <div className="block whitespace-nowrap">CPF</div>
             <div className="block whitespace-nowrap">DATA DE CADASTRO</div>
@@ -28,7 +28,7 @@ function DeleteUser() {
             <div className="block whitespace-nowrap">DATA DE NASCIMENTO</div>
           </div>
           {users.map((user: any) => (
-            <div className="flex w-[100%] gap-x-6 ">
+            <div className="flex w-[100%] gap-x-6 text-verdin-500">
               <div className="w-[15%]">{user.nome}</div>
               <div className="w-[15%]">{user.rg}</div>
               <div className="w-[15%]">{user.cpf}</div>
