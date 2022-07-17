@@ -17,36 +17,36 @@ function DeleteUser() {
     return <Loading />;
   } else {
     return (
-      <div className="flex flex-col min-w-[100%]">
-        <div className="flex flex-col h-[70vh] overflow-x-scroll   items-center  overflow-y-scroll gap-y-11">
-          <div className="flex gap-x-4 w-full text-white font-bold text-base">
-            <div className=" whitespace-nowrap flex justify-center w-[15%]">
+      <div className="flex flex-col min-w-[100%] ">
+        <div className="flex flex-col h-[70vh] overflow-x-scroll items-center  overflow-y-scroll gap-y-11">
+          <div className="flex gap-x-4  text-white font-bold text-sm">
+            <div className=" whitespace-nowrap block text-center w-[15%]">
               NOME
             </div>
-            <div className=" whitespace-nowrap flex justify-center w-[15%]">
+            <div className=" whitespace-nowrap block text-center w-[15%]">
               RG
             </div>
-            <div className=" whitespace-nowrap flex justify-center w-[15%]">
+            <div className=" whitespace-nowrap block text-center w-[15%]">
               CPF
             </div>
-            <div className=" whitespace-nowrap flex justify-center w-[15%]">
-              DATA DE CADASTRO
+            <div className=" whitespace-nowrap block text-center w-[15%]">
+              D. DE CADASTRO
             </div>
-            <div className=" whitespace-nowrap flex justify-center w-[15%]">
+            <div className=" whitespace-nowrap block text-center w-[15%]">
               NOME DA MÃE
             </div>
-            <div className=" whitespace-nowrap flex justify-center w-[15%]">
-              DATA DE NASCIMENTO
+            <div className=" whitespace-nowrap block text-center w-[15%]">
+              D. DE NASCIMENTO
             </div>
           </div>
           {users.map((user: any) => (
             <div className="flex w-[100%] gap-x-6 text-verdin-500">
-              <div className="w-[15%]">{user.nome}</div>
-              <div className="w-[15%]">{user.rg}</div>
-              <div className="w-[15%]">{user.cpf}</div>
-              <div className="w-[15%]">{user.datacadas}</div>
-              <div className="w-[15%]">{user.nomemae}</div>
-              <div className="w-[15%]">{user.datanasc}</div>
+              <div className="text-center w-[15%]">{user.nome}</div>
+              <div className="text-center w-[15%]">{user.rg}</div>
+              <div className="text-center w-[15%]">{user.cpf}</div>
+              <div className="text-center w-[15%]">{user.datacadas}</div>
+              <div className="text-center w-[15%]">{user.nomemae}</div>
+              <div className="text-center w-[15%]">{user.datanasc}</div>
               <button
                 className="bg-red-500 hover:bg-red-800 text-white font-bold rounded-xl transition-all"
                 onClick={async () => {
