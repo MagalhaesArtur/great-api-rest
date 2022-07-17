@@ -16,9 +16,9 @@ model Registro {
   nome String
   cpf    String @id
   rg     String @unique
-  dataNasc String
-  nomeMae String
-  dataCadas String
+  datanasc String
+  nomemae String
+  datacadas String
 
 
   @@map("registros")
