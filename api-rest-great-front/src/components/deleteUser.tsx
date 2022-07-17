@@ -20,27 +20,27 @@ function DeleteUser() {
       <div className="flex flex-col min-w-[100%] ">
         <div className="flex flex-col h-[70vh] overflow-x-scroll items-center  overflow-y-scroll gap-y-11">
           <div className="flex gap-x-4  text-white font-bold text-sm">
-            <div className=" whitespace-nowrap block text-center w-[15%]">
+            <div className=" whitespace-nowrap flex justify-center  w-[15%]">
               NOME
             </div>
-            <div className=" whitespace-nowrap block text-center w-[15%]">
+            <div className=" whitespace-nowrap flex justify-center  w-[15%]">
               RG
             </div>
-            <div className=" whitespace-nowrap block text-center w-[15%]">
+            <div className=" whitespace-nowrap flex justify-center  w-[15%]">
               CPF
             </div>
-            <div className=" whitespace-nowrap block text-center w-[15%]">
+            <div className=" whitespace-nowrap flex justify-center  w-[15%]">
               D. DE CADASTRO
             </div>
-            <div className=" whitespace-nowrap block text-center w-[15%]">
+            <div className=" whitespace-nowrap flex justify-center  w-[15%]">
               NOME DA MÃE
             </div>
-            <div className=" whitespace-nowrap block text-center w-[15%]">
+            <div className=" whitespace-nowrap flex justify-center  w-[15%]">
               D. DE NASCIMENTO
             </div>
           </div>
           {users.map((user: any) => (
-            <div className="flex w-[100%] gap-x-6 text-verdin-500">
+            <div className="flex w-[100%] gap-x-6 text-verdin-500 mb-3">
               <div className="text-center w-[15%]">{user.nome}</div>
               <div className="text-center w-[15%]">{user.rg}</div>
               <div className="text-center w-[15%]">{user.cpf}</div>
