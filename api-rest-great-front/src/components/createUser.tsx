@@ -94,7 +94,7 @@ function CreateUser() {
       </button>
 
       <label className="text-base text-white font-bold" htmlFor="rg">
-        Insira o seu RG:{" "}
+        Insira o RG do usuário a ser cadastrado:{" "}
       </label>
       <InputMask
         required
@@ -119,7 +119,7 @@ function CreateUser() {
         limpar RG
       </button>
       <label className="text-white text-base font-bold" htmlFor="dataNasc">
-        Insira sua data de nascimento:{" "}
+        Insira a data de nascimento do usuário a ser cadastrado:{" "}
       </label>
       <input
         required
@@ -134,7 +134,7 @@ function CreateUser() {
       />
 
       <label className="text-base text-white font-bold" htmlFor="nameMae">
-        Insira o nome da mãe:{" "}
+        Insira o nome da mãe do usuário a ser cadastrado:{" "}
       </label>
       <input
         required

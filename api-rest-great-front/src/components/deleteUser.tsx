@@ -19,7 +19,7 @@ function DeleteUser() {
     return (
       <div className="flex flex-col min-w-[100%] ">
         <div className="flex flex-col h-[70vh] overflow-x-scroll items-center  overflow-y-scroll gap-y-11">
-          <div className="flex gap-x-4  text-white font-bold text-sm">
+          <div className="flex gap-x-4 w-full  text-white font-bold text-sm">
             <div className=" whitespace-nowrap flex justify-center  w-[15%]">
               NOME
             </div>

@@ -10,12 +10,12 @@ function SearchUserCPF() {
   const [cpfList1, setCpfList1] = useState([]);
 
   const [cpfErr, setCpfErr] = useState(false);
-  console.log(cpfList1, "cu");
   const navigate = useNavigate();
 
   return (
-    <div className="flex w-[70%] flex-col gap-y-5">
+    <div className="flex justify-between w-[70%] h-[100vh] flex-col gap-y-5">
       <form
+        className="flex flex-col "
         onSubmit={async (e) => {
           e.preventDefault();
           await axios
@@ -27,30 +27,36 @@ function SearchUserCPF() {
             });
         }}
       >
-        <label htmlFor="cpf">Insira o seu CPF: </label>
-        <InputMask
-          required
-          id="cpf"
-          name="cpf"
-          mask="999.999.999-99"
-          className="bg-slate-200"
-          type="text"
-          value={cpf1}
-          onChange={(e) => {
-            setCpf(e.target.value.replaceAll(/[^0-9]/g, ""));
-          }}
-        />
+        <div className="flex mb-4 flex-col w-full">
+          <label className="text-white mb-1 font-bold text-base" htmlFor="cpf">
+            Insira o CPF de algum usuário:{" "}
+          </label>
+          <InputMask
+            required
+            id="cpf"
+            name="cpf"
+            mask="999.999.999-99"
+            className="bg-nsei-500 p-2 rounded-xl border-2 border-transparent outline-none transition-all text-white hover:border-verdin-500 active:border-verdin-500 focus:border-verdin"
+            type="text"
+            value={cpf1}
+            onChange={(e) => {
+              setCpf(e.target.value.replaceAll(/[^0-9]/g, ""));
+            }}
+          />
+        </div>
         {cpfErr && <p>digite um CPF válido</p>}
         <button
           type="submit"
-          className="w-[200px] h-[100px] bg-red-700"
+          className="p-2 w-[150px] rounded-xl font-bold bg-verdin-500 border-2 border-transparent text-roxin-500 hover:bg-nsei-500 hover:border-verdin-500 hover:text-verdin-500 transition-all"
           onClick={async () => {
             const lista = cpfList.filter(({ cpf }) => {
               return cpf == cpf1;
             });
             setCpfList1(lista);
           }}
-        ></button>
+        >
+          CONSULTAR
+        </button>
       </form>
       <div className="w-[70%] ">
         {cpfList1.map((user: any) => (
