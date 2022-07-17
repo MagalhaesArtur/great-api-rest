@@ -3,10 +3,11 @@ import cors from "cors";
 import { prisma } from "./prisma";
 
 const app = express();
+app.use(cors());
+
 const porta = process.env.PORT || 3333;
 
 app.use(express.json());
-app.use(cors());
 
 app.post("/user", async (req, res) => {
   const { nome, cpf, rg, dataNasc, nomeMae, dataCadas } = req.body;
