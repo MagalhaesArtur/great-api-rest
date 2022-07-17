@@ -13,6 +13,9 @@ module.exports = {
         verdin: {
           500: "#00ff88",
         },
+        nsei: {
+          500: "#524670",
+        },
       },
       boxShadow: {
         daora: "10px 10px 40px #000056;",

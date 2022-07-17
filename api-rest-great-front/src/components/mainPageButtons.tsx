@@ -30,7 +30,7 @@ function MainPageButtons() {
               }
             }, 500);
           }}
-          className="bg-verdin-500 p-4 w-[80vw] rounded-xl h-[70px] border-2 border-transparent text-roxinescuro-500 text-base font-bold hover:border-verdin-500 hover:bg-roxin-500 hover:text-verdin-500 transition-all hover:shadow-daora"
+          className="bg-verdin-500 p-4 w-[80vw] rounded-xl h-[70px] border-2 border-transparent text-roxinescuro-500 text-base font-bold hover:border-verdin-500 hover:bg-roxin-500 hover:text-verdin-500 transition-all hover:shadow-daora sm:w-[50vw]"
         >
           {option}
         </button>
