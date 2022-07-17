@@ -10,16 +10,16 @@ const porta = process.env.PORT || 3333;
 app.use(express.json());
 
 app.post("/user", async (req, res) => {
-  const { nome, cpf, rg, dataNasc, nomeMae, dataCadas } = req.body;
+  const { nome, cpf, rg, datanasc, nomemae, datacadas } = req.body;
 
   const register = await prisma.registro.create({
     data: {
       nome,
       cpf,
       rg,
-      dataNasc,
-      nomeMae,
-      dataCadas,
+      datanasc,
+      nomemae,
+      datacadas,
     },
   });
 
