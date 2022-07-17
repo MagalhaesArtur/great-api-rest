@@ -24,9 +24,9 @@ function DeleteUser() {
             <div className="w-[15%]">{user.nome}</div>
             <div className="w-[15%]">{user.rg}</div>
             <div className="w-[15%]">{user.cpf}</div>
-            <div className="w-[15%]">{user.dataCadas}</div>
-            <div className="w-[15%]">{user.nomeMae}</div>
-            <div className="w-[15%]">{user.dataNasc}</div>
+            <div className="w-[15%]">{user.datacadas}</div>
+            <div className="w-[15%]">{user.nomemae}</div>
+            <div className="w-[15%]">{user.datanasc}</div>
             <button
               className="bg-red-700"
               onClick={async () => {

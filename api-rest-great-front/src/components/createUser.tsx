@@ -9,8 +9,8 @@ function CreateUser() {
   const [nome, setName] = useState("");
   const [cpf, setCpf] = useState("");
   const [rg, setRg] = useState("");
-  const [dataNasc, setNasc] = useState("");
-  const [nomeMae, setNameMae] = useState("");
+  const [datanasc, setNasc] = useState("");
+  const [nomemae, setNameMae] = useState("");
   console.log(cpf);
 
   const [cpfErr, setCpfErr] = useState(false);
@@ -36,9 +36,9 @@ function CreateUser() {
               nome,
               cpf,
               rg,
-              dataNasc,
-              nomeMae,
-              dataCadas: new Date(),
+              datanasc,
+              nomemae,
+              datacadas: new Date(),
             });
             setRg("");
             setCpf("");
@@ -111,7 +111,7 @@ function CreateUser() {
         name="dataNasc"
         id="dataNasc"
         className="bg-slate-200"
-        value={dataNasc}
+        value={datanasc}
         onChange={(e) => {
           setNasc(e.target.value);
         }}
@@ -124,7 +124,7 @@ function CreateUser() {
         name="nameMae"
         className="bg-slate-200"
         type="text"
-        value={nomeMae}
+        value={nomemae}
         onChange={(e) => {
           setNameMae(e.target.value);
         }}

@@ -56,9 +56,9 @@ function SearchUserCPF() {
         {cpfList1.map((user: any) => (
           <div>
             <div>{user.nome}</div>
-            <div>{user.dataNasc}</div>
-            <div>{user.dataCadas}</div>
-            <div>{user.nomeMae}</div>
+            <div>{user.datanasc}</div>
+            <div>{user.datacadas}</div>
+            <div>{user.nomemae}</div>
             <div>{user.rg}</div>
             <div>{user.cpf}</div>
           </div>

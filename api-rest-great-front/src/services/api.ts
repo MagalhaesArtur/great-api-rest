@@ -6,11 +6,11 @@ export const createUser = async ({
   nome,
   cpf,
   rg,
-  dataNasc,
-  nomeMae,
-  dataCadas,
+  datanasc,
+  nomemae,
+  datacadas,
 }: any) => {
-  await api.post("/user", { nome, cpf, rg, dataNasc, nomeMae, dataCadas });
+  await api.post("/user", { nome, cpf, rg, datanasc, nomemae, datacadas });
 };
 
 export const deleteUser = async ({ cpf }: any) => {
