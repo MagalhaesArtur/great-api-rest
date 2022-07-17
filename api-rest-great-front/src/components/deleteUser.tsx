@@ -17,7 +17,7 @@ function DeleteUser() {
     return <Loading />;
   } else {
     return (
-      <div className="flex flex-col h-[70%]  items-center w-[80vw] overflow-y-scroll gap-y-11">
+      <div className="flex flex-col h-full  items-center w-[80vw] overflow-y-scroll gap-y-11">
         {users.map((user: any) => (
           <div className="flex w-[100%] gap-x-6 ">
             <div className="w-[15%]">{user.nome}</div>

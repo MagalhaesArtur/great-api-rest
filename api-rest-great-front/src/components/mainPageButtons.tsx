@@ -11,7 +11,7 @@ function MainPageButtons() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col gap-y-10">
+    <div className="flex justify-center items-center flex-col h-[100vh] gap-y-10">
       {opitions.map((option) => (
         <button
           onClick={() => {
