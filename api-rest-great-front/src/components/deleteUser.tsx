@@ -20,12 +20,24 @@ function DeleteUser() {
       <div className="flex flex-col ">
         <div className="flex flex-col h-[70vh] overflow-x-scroll   items-center  overflow-y-scroll gap-y-11">
           <div className="flex gap-x-4 w-full text-white font-bold text-base">
-            <div className="block whitespace-nowrap w-[15%]">NOME</div>
-            <div className="block whitespace-nowrap">RG</div>
-            <div className="block whitespace-nowrap">CPF</div>
-            <div className="block whitespace-nowrap">DATA DE CADASTRO</div>
-            <div className="block whitespace-nowrap">NOME DA MÃE</div>
-            <div className="block whitespace-nowrap">DATA DE NASCIMENTO</div>
+            <div className=" whitespace-nowrap flex justify-center w-[15%]">
+              NOME
+            </div>
+            <div className=" whitespace-nowrap flex justify-center w-[15%]">
+              RG
+            </div>
+            <div className=" whitespace-nowrap flex justify-center w-[15%]">
+              CPF
+            </div>
+            <div className=" whitespace-nowrap flex justify-center w-[15%]">
+              DATA DE CADASTRO
+            </div>
+            <div className=" whitespace-nowrap flex justify-center w-[15%]">
+              NOME DA MÃE
+            </div>
+            <div className=" whitespace-nowrap flex justify-center w-[15%]">
+              DATA DE NASCIMENTO
+            </div>
           </div>
           {users.map((user: any) => (
             <div className="flex w-[100%] gap-x-6 text-verdin-500">
@@ -36,7 +48,7 @@ function DeleteUser() {
               <div className="w-[15%]">{user.nomemae}</div>
               <div className="w-[15%]">{user.datanasc}</div>
               <button
-                className="bg-red-700"
+                className="bg-red-500 hover:bg-red-800 text-white font-bold rounded-xl transition-all"
                 onClick={async () => {
                   setLoading(true);
 
