@@ -7,7 +7,7 @@ import SearchUserByName from "./components/searchUserByName";
 
 function App() {
   return (
-    <div className="w-[100vw] h-[100vh] flex justify-center items-center">
+    <div className="w-[100vw] h-[100vh] flex justify-center bg-roxin-500 items-center">
       <Router>
         <Routes>
           <Route path="/" element={<MainPageButtons />} />

@@ -11,7 +11,7 @@ function MainPageButtons() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col gap-y-5">
+    <div className="flex flex-col gap-y-10">
       {opitions.map((option) => (
         <button
           onClick={() => {
@@ -30,7 +30,7 @@ function MainPageButtons() {
               }
             }, 500);
           }}
-          className="bg-red-600 px-9"
+          className="bg-verdin-500 p-4 w-[80vw] rounded-xl h-[70px] border-2 border-transparent text-roxinescuro-500 text-base font-bold hover:border-verdin-500 hover:bg-roxin-500 hover:text-verdin-500 transition-all hover:shadow-daora"
         >
           {option}
         </button>

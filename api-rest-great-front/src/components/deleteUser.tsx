@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Loading from "./loading";
 
 function DeleteUser() {
   const [users, setUsers] = useState([]);
@@ -13,9 +14,7 @@ function DeleteUser() {
   }, [loading]);
 
   if (loading) {
-    return (
-      <div className="w-[100vw] h-[100vh] bg-purple-800">carreagndo...</div>
-    );
+    return <Loading />;
   } else {
     return (
       <div className="flex flex-col h-[70%]  items-center w-[80vw] overflow-y-scroll gap-y-11">
