@@ -23,10 +23,10 @@ function MainPageButtons() {
                 navigate("/delete");
               }
               if (option == "Consultar Usuário por CPF ou RG") {
-                navigate("/cpf");
+                navigate("/user");
               }
               if (option == "Buscar Usuário(s) por Nome") {
-                navigate("/name");
+                navigate("/users");
               }
             }, 500);
           }}

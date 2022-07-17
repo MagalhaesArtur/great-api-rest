@@ -33,16 +33,22 @@ app.delete("/delete", async (req, res) => {
   return res.status(200).json({ data: deletedUser });
 });
 
-app.get("/cpf", async (req, res) => {
-  const { cpf } = req.body;
+app.get("/delete", async (req, res) => {
+  const users = await prisma.registro.findMany();
 
-  const register = await prisma.registro.findUnique({
+  return res.status(200).json({ users });
+});
+
+app.get("/user", async (req, res) => {
+  const cpf = req.params;
+
+  const register = await prisma.registro.findMany({
     where: { cpf },
   });
   res.json(register);
 });
 
-app.get("/nomes", async (req, res) => {
+app.get("/users", async (req, res) => {
   const { nome } = req.body;
 
   const register = await prisma.registro.findMany({
