@@ -26,12 +26,14 @@ function SearchUserByName() {
             });
         }}
       >
-        <label htmlFor="cpf">Insira o nome: </label>
+        <label className="text-white mb-1 font-bold text-base" htmlFor="cpf">
+          Insira o nome de algum usuário (completo ou parte do nome):{" "}
+        </label>
         <input
           required
           id="cpf"
           name="cpf"
-          className="bg-slate-200"
+          className="bg-nsei-500 p-2 rounded-xl border-2 border-transparent outline-none transition-all text-white hover:border-verdin-500 active:border-verdin-500 focus:border-verdin-500"
           type="text"
           value={name1}
           onChange={(e) => {
@@ -41,7 +43,7 @@ function SearchUserByName() {
         {cpfErr && <p>digite um CPF válido</p>}
         <button
           type="submit"
-          className="w-[200px] h-[100px] bg-red-700"
+          className="p-2 w-[150px] rounded-xl font-bold bg-verdin-500 border-2 border-transparent text-roxin-500 hover:bg-nsei-500 hover:border-verdin-500 hover:text-verdin-500 transition-all"
           onClick={() => {
             let lista: any = Array([]);
             for (let user of nameList) {
@@ -53,10 +55,11 @@ function SearchUserByName() {
               }
             }
 
-            console.log(cpfList1, "cu");
             setCpfList1(lista);
           }}
-        ></button>
+        >
+          CONSULTAR
+        </button>
       </form>
       <div className="flex flex-col min-w-[100%] ">
         <div className="flex flex-col h-[70vh] overflow-x-scroll items-center  overflow-y-scroll gap-y-11">
