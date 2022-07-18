@@ -100,22 +100,18 @@ function SearchUserCPF() {
                 D. DE NASCIMENTO
               </div>
             </div>
-            {setTimeout(() => {
-              !loading2
-                ? cpfList1.map((user: any) => (
-                    <div className="flex w-[100%] gap-x-6 text-verdin-500 mb-3">
-                      <div className="text-center w-[15%]">{user.nome}</div>
-                      <div className="text-center w-[15%]">{user.rg}</div>
-                      <div className="text-center w-[15%]">{user.cpf}</div>
-                      <div className="text-center w-[15%]">
-                        {user.datacadas}
-                      </div>
-                      <div className="text-center w-[15%]">{user.nomemae}</div>
-                      <div className="text-center w-[15%]">{user.datanasc}</div>
-                    </div>
-                  ))
-                : undefined;
-            }, 1000)}
+            {!loading2
+              ? cpfList1.map((user: any) => (
+                  <div className="flex w-[100%] gap-x-6 text-verdin-500 mb-3">
+                    <div className="text-center w-[15%]">{user.nome}</div>
+                    <div className="text-center w-[15%]">{user.rg}</div>
+                    <div className="text-center w-[15%]">{user.cpf}</div>
+                    <div className="text-center w-[15%]">{user.datacadas}</div>
+                    <div className="text-center w-[15%]">{user.nomemae}</div>
+                    <div className="text-center w-[15%]">{user.datanasc}</div>
+                  </div>
+                ))
+              : undefined}
           </div>
         </div>
       </div>
