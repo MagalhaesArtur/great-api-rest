@@ -23,6 +23,8 @@ function DeleteUser() {
     });
   }, [loading]);
 
+  useEffect(() => {}, [confirmDelete]);
+
   if (loading) {
     return <Loading />;
   } else {
