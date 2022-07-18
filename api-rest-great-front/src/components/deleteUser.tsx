@@ -66,15 +66,17 @@ function DeleteUser() {
 
                   setConfirmDeleteAux(true);
 
-                  await axios
-                    .delete(import.meta.env.VITE_API_URL + "/delete", {
-                      data: { cpf: user.cpf },
-                    })
-                    .then((response) => {
-                      console.log(response.data);
-                    });
+                  if (confirmDelete) {
+                    await axios
+                      .delete(import.meta.env.VITE_API_URL + "/delete", {
+                        data: { cpf: user.cpf },
+                      })
+                      .then((response) => {
+                        console.log(response.data);
+                      });
 
-                  setLoading(false);
+                    setLoading(false);
+                  }
                 }}
               >
                 apagar usuário
