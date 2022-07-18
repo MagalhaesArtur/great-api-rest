@@ -62,11 +62,11 @@ function DeleteUser() {
               <button
                 className="bg-red-500 hover:bg-red-800 text-white font-bold rounded-xl transition-all"
                 onClick={async () => {
-                  setLoading(true);
-
                   setConfirmDeleteAux(true);
 
                   if (confirmDelete) {
+                    setLoading(true);
+
                     await axios
                       .delete(import.meta.env.VITE_API_URL + "/delete", {
                         data: { cpf: user.cpf },
