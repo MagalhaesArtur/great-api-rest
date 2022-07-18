@@ -13,6 +13,7 @@ function CreateUser() {
   const [rg, setRg] = useState("");
   const [datanasc, setNasc] = useState("");
   const [nomemae, setNameMae] = useState("");
+  let navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
 
@@ -51,7 +52,7 @@ function CreateUser() {
               setName("");
               setNameMae("");
               setNasc("");
-              useNavigate("/");
+              navigate("/");
             } catch (error) {
               console.log(error);
             }
