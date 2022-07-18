@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import InputMask from "react-input-mask";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 function SearchUserByName() {
@@ -9,8 +9,27 @@ function SearchUserByName() {
 
   const [cpfList1, setCpfList1]: any = useState([]);
 
+  const [loading, setLoading] = useState(false);
+  const [loading2, setLoading2] = useState(false);
+
+  useEffect(() => {
+    setLoading2(true);
+
+    let lista: any = Array([]);
+    for (let user of nameList) {
+      let lista1 = user.nome.split(" ");
+      for (let nome of lista1) {
+        if (nome == name1) {
+          lista.push(user);
+        }
+      }
+    }
+    setCpfList1(lista);
+
+    setLoading2(false);
+  }, [nameList]);
+
   const [cpfErr, setCpfErr] = useState(false);
-  const navigate = useNavigate();
 
   return (
     <div className="flex w-[90%] flex-col gap-y-5">
@@ -18,13 +37,6 @@ function SearchUserByName() {
         className="flex flex-col"
         onSubmit={async (e) => {
           e.preventDefault();
-          await axios
-            .get(import.meta.env.VITE_API_URL + "/user", {
-              data: { name1 },
-            })
-            .then((response) => {
-              setNameList(response.data);
-            });
         }}
       >
         <label className=" text-white mb-2 font-bold text-base" htmlFor="cpf">
@@ -45,18 +57,34 @@ function SearchUserByName() {
         <button
           type="submit"
           className="p-2  w-[150px] rounded-xl font-bold bg-verdin-500 border-2 border-transparent text-roxin-500 hover:bg-nsei-500 hover:border-verdin-500 hover:text-verdin-500 transition-all"
-          onClick={() => {
-            let lista: any = Array([]);
-            for (let user of nameList) {
-              let lista1 = user.nome.split(" ");
-              for (let nome of lista1) {
-                if (nome == name1) {
-                  lista.push(user);
-                }
-              }
-            }
+          onClick={async () => {
+            try {
+              await axios
+                .get(import.meta.env.VITE_API_URL + "/user", {
+                  data: { name1 },
+                })
+                .then((response) => {
+                  setNameList(response.data);
 
-            setCpfList1(lista);
+                  setLoading2(true);
+
+                  let lista: any = Array([]);
+                  for (let user of nameList) {
+                    let lista1 = user.nome.split(" ");
+                    for (let nome of lista1) {
+                      if (nome == name1) {
+                        lista.push(user);
+                      }
+                    }
+                  }
+                  setCpfList1(lista);
+
+                  setLoading2(false);
+                });
+            } catch (error) {
+              console.log(error);
+            }
+            setLoading(false);
           }}
         >
           CONSULTAR
