@@ -64,15 +64,16 @@ function SearchUserCPF() {
                   })
                   .then((response) => {
                     setCpfList(response.data);
+
+                    setLoading2(true);
+
+                    const lista = cpfList.filter(({ cpf }) => {
+                      return cpf == cpf1;
+                    });
+                    setCpfList1(lista);
+
+                    setLoading2(false);
                   });
-                setLoading2(true);
-
-                const lista = cpfList.filter(({ cpf }) => {
-                  return cpf == cpf1;
-                });
-                setCpfList1(lista);
-
-                setLoading2(false);
               } catch (error) {
                 console.log(error);
               }
