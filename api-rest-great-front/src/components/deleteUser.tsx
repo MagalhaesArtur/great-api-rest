@@ -89,7 +89,10 @@ function DeleteUser() {
           ))}
         </div>
         {confirmDeleteAux ? (
-          <ConfirmDelete setConfirmDelete={setConfirmDelete} />
+          <ConfirmDelete
+            setConfirmDelete={setConfirmDelete}
+            setConfirmDeleteAux={setConfirmDeleteAux}
+          />
         ) : undefined}
       </div>
     );
