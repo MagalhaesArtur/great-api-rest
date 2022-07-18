@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import InputMask from "react-input-mask";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Loading from "./loading";
 
@@ -8,13 +8,14 @@ function SearchUserCPF() {
   const [cpf1, setCpf] = useState("");
   const [cpfList, setCpfList] = useState([]);
 
+  useEffect(() => {}, [cpfList]);
+
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
 
   const [cpfList1, setCpfList1] = useState([]);
 
   const [cpfErr, setCpfErr] = useState(false);
-  const navigate = useNavigate();
 
   if (loading) {
     return <Loading />;
@@ -99,18 +100,22 @@ function SearchUserCPF() {
                 D. DE NASCIMENTO
               </div>
             </div>
-            {!loading2
-              ? cpfList1.map((user: any) => (
-                  <div className="flex w-[100%] gap-x-6 text-verdin-500 mb-3">
-                    <div className="text-center w-[15%]">{user.nome}</div>
-                    <div className="text-center w-[15%]">{user.rg}</div>
-                    <div className="text-center w-[15%]">{user.cpf}</div>
-                    <div className="text-center w-[15%]">{user.datacadas}</div>
-                    <div className="text-center w-[15%]">{user.nomemae}</div>
-                    <div className="text-center w-[15%]">{user.datanasc}</div>
-                  </div>
-                ))
-              : undefined}
+            {setTimeout(() => {
+              !loading2
+                ? cpfList1.map((user: any) => (
+                    <div className="flex w-[100%] gap-x-6 text-verdin-500 mb-3">
+                      <div className="text-center w-[15%]">{user.nome}</div>
+                      <div className="text-center w-[15%]">{user.rg}</div>
+                      <div className="text-center w-[15%]">{user.cpf}</div>
+                      <div className="text-center w-[15%]">
+                        {user.datacadas}
+                      </div>
+                      <div className="text-center w-[15%]">{user.nomemae}</div>
+                      <div className="text-center w-[15%]">{user.datanasc}</div>
+                    </div>
+                  ))
+                : undefined;
+            }, 1000)}
           </div>
         </div>
       </div>
