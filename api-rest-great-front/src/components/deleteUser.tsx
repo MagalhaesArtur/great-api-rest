@@ -74,10 +74,9 @@ function DeleteUser() {
                       });
 
                     setLoading(false);
+                    setConfirmDelete(false);
+                    setConfirmDeleteAux(false);
                   }
-
-                  setConfirmDelete(false);
-                  setConfirmDeleteAux(false);
                 }}
               >
                 apagar usuário
