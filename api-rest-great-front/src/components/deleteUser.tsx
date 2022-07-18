@@ -15,10 +15,6 @@ function DeleteUser() {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [confirmDeleteAux, setConfirmDeleteAux] = useState(false);
 
-  const handleDeleteButton = (): any => {
-    setConfirmDelete(false);
-  };
-
   useEffect(() => {
     axios.get(import.meta.env.VITE_API_URL + "/delete").then((response) => {
       setUsers(response.data.users);
@@ -82,7 +78,7 @@ function DeleteUser() {
                 apagar usuário
               </button>
               {confirmDeleteAux ? (
-                <ConfirmDelete handleDeleteButton={handleDeleteButton} />
+                <ConfirmDelete setConfirmDelete={setConfirmDelete} />
               ) : undefined}
             </div>
           ))}

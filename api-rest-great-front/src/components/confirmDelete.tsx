@@ -7,7 +7,7 @@ function ConfirmDelete(props: any) {
     <div className="w-100vw h-100vh absolute bg-slate-900 opacity-40 flex justify-center items-center">
       <button
         onClick={() => {
-          props.handleDeleteButton();
+          props.setConfirmDelete(true);
         }}
         className="bg-red text-white"
       >
