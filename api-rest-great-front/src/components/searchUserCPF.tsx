@@ -24,19 +24,6 @@ function SearchUserCPF() {
           className="flex flex-col "
           onSubmit={async (e) => {
             e.preventDefault();
-            setLoading(true);
-            try {
-              await axios
-                .get(import.meta.env.VITE_API_URL + "/user", {
-                  data: { cpf1 },
-                })
-                .then((response) => {
-                  setCpfList(response.data);
-                });
-            } catch (error) {
-              console.log(error);
-            }
-            setLoading(false);
           }}
         >
           <div className="flex mb-4 flex-col w-full">
@@ -64,6 +51,20 @@ function SearchUserCPF() {
             type="submit"
             className="p-2 w-[150px] rounded-xl font-bold bg-verdin-500 border-2 border-transparent text-roxin-500 hover:bg-nsei-500 hover:border-verdin-500 hover:text-verdin-500 transition-all"
             onClick={async () => {
+              setLoading(true);
+              try {
+                await axios
+                  .get(import.meta.env.VITE_API_URL + "/user", {
+                    data: { cpf1 },
+                  })
+                  .then((response) => {
+                    setCpfList(response.data);
+                  });
+              } catch (error) {
+                console.log(error);
+              }
+              setLoading(false);
+
               const lista = cpfList.filter(({ cpf }) => {
                 return cpf == cpf1;
               });
