@@ -95,7 +95,7 @@ function SearchUserCPF() {
                 D. DE NASCIMENTO
               </div>
             </div>
-            {!loading
+            {cpfList1 != []
               ? cpfList1.map((user: any) => (
                   <div className="flex w-[100%] gap-x-6 text-verdin-500 mb-3">
                     <div className="text-center w-[15%]">{user.nome}</div>
