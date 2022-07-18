@@ -4,12 +4,12 @@ import { CircleNotch } from "phosphor-react";
 
 function ConfirmDelete(props: any) {
   return (
-    <div className="right-[50%] top-[50%] absolute bg-slate-900 opacity-40 flex justify-center items-center">
+    <div className="right-[50%] top-[50%] absolute p-20 bg-slate-900 opacity-40 flex justify-center items-center">
       <button
         onClick={() => {
           props.setConfirmDelete(true);
         }}
-        className="bg-red text-white"
+        className="bg-red w-[100px] text-white"
       >
         {" "}
         confirmar?
