@@ -79,7 +79,9 @@ function DeleteUser() {
               >
                 apagar usuário
               </button>
-              <ConfirmDelete handleDeleteButton={handleDeleteButton} />
+              {confirmDeleteAux ? (
+                <ConfirmDelete handleDeleteButton={handleDeleteButton} />
+              ) : undefined}
             </div>
           ))}
         </div>
