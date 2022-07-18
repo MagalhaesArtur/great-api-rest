@@ -15,6 +15,7 @@ function SearchUserByName() {
   return (
     <div className="flex w-[70%] flex-col gap-y-5">
       <form
+        className="flex flex-col"
         onSubmit={async (e) => {
           e.preventDefault();
           await axios
