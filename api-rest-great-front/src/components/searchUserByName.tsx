@@ -13,7 +13,7 @@ function SearchUserByName() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex w-[70%] flex-col gap-y-5">
+    <div className="flex w-[90%] flex-col gap-y-5">
       <form
         className="flex flex-col"
         onSubmit={async (e) => {
@@ -27,14 +27,14 @@ function SearchUserByName() {
             });
         }}
       >
-        <label className="text-white mb-1 font-bold text-base" htmlFor="cpf">
+        <label className=" text-white mb-2 font-bold text-base" htmlFor="cpf">
           Insira o nome de algum usuário (completo ou parte do nome):{" "}
         </label>
         <input
           required
           id="cpf"
           name="cpf"
-          className="bg-nsei-500 p-2 rounded-xl border-2 border-transparent outline-none transition-all text-white hover:border-verdin-500 active:border-verdin-500 focus:border-verdin-500"
+          className="bg-nsei-500 mb-2 p-2 rounded-xl border-2 border-transparent outline-none transition-all text-white hover:border-verdin-500 active:border-verdin-500 focus:border-verdin-500"
           type="text"
           value={name1}
           onChange={(e) => {
@@ -44,7 +44,7 @@ function SearchUserByName() {
         {cpfErr && <p>digite um CPF válido</p>}
         <button
           type="submit"
-          className="p-2 w-[150px] rounded-xl font-bold bg-verdin-500 border-2 border-transparent text-roxin-500 hover:bg-nsei-500 hover:border-verdin-500 hover:text-verdin-500 transition-all"
+          className="p-2  w-[150px] rounded-xl font-bold bg-verdin-500 border-2 border-transparent text-roxin-500 hover:bg-nsei-500 hover:border-verdin-500 hover:text-verdin-500 transition-all"
           onClick={() => {
             let lista: any = Array([]);
             for (let user of nameList) {
