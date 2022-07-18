@@ -5,6 +5,7 @@ import { validRG } from "../utils/regex";
 
 import { createUser } from "../services/api";
 import Loading from "./loading";
+import { useNavigate } from "react-router-dom";
 
 function CreateUser() {
   const [nome, setName] = useState("");
@@ -50,6 +51,7 @@ function CreateUser() {
               setName("");
               setNameMae("");
               setNasc("");
+              useNavigate("/");
             } catch (error) {
               console.log(error);
             }
