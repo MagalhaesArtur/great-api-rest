@@ -59,36 +59,38 @@ function DeleteUser() {
               <div className="text-center w-[15%]">{user.datacadas}</div>
               <div className="text-center w-[15%]">{user.nomemae}</div>
               <div className="text-center w-[15%]">{user.datanasc}</div>
-              <button
-                className="bg-red-500 hover:bg-red-800 text-white font-bold rounded-xl transition-all"
-                onClick={async () => {
-                  setConfirmDeleteAux(true);
+              <div className="flex gap-x-2">
+                <button
+                  className="bg-red-500 hover:bg-red-800 text-white font-bold rounded-xl transition-all"
+                  onClick={async () => {
+                    setConfirmDeleteAux(true);
 
-                  if (confirmDelete) {
-                    setLoading(true);
+                    if (confirmDelete) {
+                      setLoading(true);
 
-                    await axios
-                      .delete(import.meta.env.VITE_API_URL + "/delete", {
-                        data: { cpf: user.cpf },
-                      })
-                      .then((response) => {
-                        console.log(response.data);
-                      });
+                      await axios
+                        .delete(import.meta.env.VITE_API_URL + "/delete", {
+                          data: { cpf: user.cpf },
+                        })
+                        .then((response) => {
+                          console.log(response.data);
+                        });
 
-                    setLoading(false);
-                    setConfirmDelete(false);
-                    setConfirmDeleteAux(false);
-                  }
-                }}
-              >
-                apagar usuário
-              </button>
-              {confirmDeleteAux ? (
-                <ConfirmDelete setConfirmDelete={setConfirmDelete} />
-              ) : undefined}
+                      setLoading(false);
+                      setConfirmDelete(false);
+                      setConfirmDeleteAux(false);
+                    }
+                  }}
+                >
+                  apagar usuário
+                </button>
+              </div>
             </div>
           ))}
         </div>
+        {confirmDeleteAux ? (
+          <ConfirmDelete setConfirmDelete={setConfirmDelete} />
+        ) : undefined}
       </div>
     );
   }
