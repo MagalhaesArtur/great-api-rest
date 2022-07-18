@@ -45,7 +45,7 @@ function CreateUser() {
                 rg,
                 datanasc,
                 nomemae,
-                datacadas: new Date(),
+                datacadas: new Date().toLocaleDateString(),
               });
               setRg("");
               setCpf("");
