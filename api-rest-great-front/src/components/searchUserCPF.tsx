@@ -8,7 +8,16 @@ function SearchUserCPF() {
   const [cpf1, setCpf] = useState("");
   const [cpfList, setCpfList] = useState([]);
 
-  useEffect(() => {}, [cpfList]);
+  useEffect(() => {
+    setLoading2(true);
+
+    const lista = cpfList.filter(({ cpf }) => {
+      return cpf == cpf1;
+    });
+    setCpfList1(lista);
+
+    setLoading2(false);
+  }, [cpfList]);
 
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
