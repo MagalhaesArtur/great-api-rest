@@ -9,7 +9,7 @@ function ConfirmDelete(props: any) {
         onClick={() => {
           props.setConfirmDelete(true);
         }}
-        className="bg-red w-[100px] text-white"
+        className="bg-red-500 w-[100px] text-white"
       >
         {" "}
         confirmar?
