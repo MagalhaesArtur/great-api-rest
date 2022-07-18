@@ -15,6 +15,8 @@ function DeleteUser() {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [confirmDeleteAux, setConfirmDeleteAux] = useState(false);
 
+  console.log(setConfirmDelete);
+
   useEffect(() => {
     axios.get(import.meta.env.VITE_API_URL + "/delete").then((response) => {
       setUsers(response.data.users);
@@ -73,6 +75,9 @@ function DeleteUser() {
 
                     setLoading(false);
                   }
+
+                  setConfirmDelete(false);
+                  setConfirmDeleteAux(false);
                 }}
               >
                 apagar usuário
