@@ -15,6 +15,9 @@ function SearchUserCPF() {
 
   const [cpfList1, setCpfList1] = useState([]);
 
+  console.log(cpfList);
+  console.log(cpfList1);
+
   const [cpfErr, setCpfErr] = useState(false);
 
   if (loading) {
