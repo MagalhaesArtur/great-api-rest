@@ -4,7 +4,7 @@ import { CircleNotch } from "phosphor-react";
 
 function ConfirmDelete(props: any) {
   return (
-    <div className="right-[50vw] top-[50vh] absolute p-20 bg-slate-900 opacity-40 flex justify-center items-center">
+    <div className="right-[50vw] top-[50vh] absolute p-20 bg-green-500 opacity-40 flex justify-center items-center">
       <button
         onClick={() => {
           props.setConfirmDelete(true);
