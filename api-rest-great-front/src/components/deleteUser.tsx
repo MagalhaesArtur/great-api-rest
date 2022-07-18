@@ -1,11 +1,23 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ConfirmDelete from "./confirmDelete";
 import Loading from "./loading";
+
+interface teste {
+  teste1: boolean;
+}
 
 function DeleteUser() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [confirmDeleteAux, setConfirmDeleteAux] = useState(false);
+
+  const handleDeleteButton = (): any => {
+    setConfirmDelete(false);
+  };
 
   useEffect(() => {
     axios.get(import.meta.env.VITE_API_URL + "/delete").then((response) => {
@@ -52,6 +64,8 @@ function DeleteUser() {
                 onClick={async () => {
                   setLoading(true);
 
+                  setConfirmDeleteAux(true);
+
                   await axios
                     .delete(import.meta.env.VITE_API_URL + "/delete", {
                       data: { cpf: user.cpf },
@@ -65,6 +79,9 @@ function DeleteUser() {
               >
                 apagar usuário
               </button>
+              {confirmDeleteAux ? (
+                <ConfirmDelete handleDeleteButton={handleDeleteButton} />
+              ) : undefined}
             </div>
           ))}
         </div>
