@@ -9,6 +9,7 @@ function SearchUserCPF() {
   const [cpfList, setCpfList] = useState([]);
 
   const [loading, setLoading] = useState(false);
+  const [loading2, setLoading2] = useState(false);
 
   const [cpfList1, setCpfList1] = useState([]);
 
@@ -65,10 +66,12 @@ function SearchUserCPF() {
               }
               setLoading(false);
 
+              setLoading2(true);
               const lista = cpfList.filter(({ cpf }) => {
                 return cpf == cpf1;
               });
               setCpfList1(lista);
+              setLoading2(false);
             }}
           >
             CONSULTAR
@@ -96,7 +99,7 @@ function SearchUserCPF() {
                 D. DE NASCIMENTO
               </div>
             </div>
-            {cpfList1 != []
+            {!loading2
               ? cpfList1.map((user: any) => (
                   <div className="flex w-[100%] gap-x-6 text-verdin-500 mb-3">
                     <div className="text-center w-[15%]">{user.nome}</div>
