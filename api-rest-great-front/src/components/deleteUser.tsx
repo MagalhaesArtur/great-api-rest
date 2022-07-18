@@ -15,7 +15,7 @@ function DeleteUser() {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [confirmDeleteAux, setConfirmDeleteAux] = useState(false);
 
-  console.log(setConfirmDelete);
+  console.log(confirmDelete);
 
   useEffect(() => {
     axios.get(import.meta.env.VITE_API_URL + "/delete").then((response) => {
