@@ -15,6 +15,8 @@ function CreateUser() {
   const [nomemae, setNameMae] = useState("");
   let navigate = useNavigate();
 
+  console.log(rg, cpf);
+
   const [loading, setLoading] = useState(false);
 
   const [cpfErr, setCpfErr] = useState(false);
@@ -114,7 +116,7 @@ function CreateUser() {
           type="text"
           value={rg}
           onChange={(e) => {
-            setRg(e.target.value);
+            setRg(e.target.value.replaceAll(/[^0-9]/g, ""));
           }}
         />
         {rgErr && <p>digite um RG válido</p>}

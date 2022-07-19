@@ -1,7 +1,3 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { CircleNotch } from "phosphor-react";
-
 function ConfirmDelete(props: any) {
   return (
     <div className="text-center right-[50vw] top-[50vh] absolute w-[150px] bg-nsei-500 rounded-lg flex flex-col text-white font-bold">
