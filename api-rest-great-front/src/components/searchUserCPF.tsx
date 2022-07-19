@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Loading from "./loading";
 
+import { validCPF } from "../utils/regex";
+
 function SearchUserCPF() {
   const [cpf1, setCpf] = useState("");
   const [cpfList, setCpfList] = useState([]);
@@ -28,6 +30,14 @@ function SearchUserCPF() {
   console.log(cpfList1);
 
   const [cpfErr, setCpfErr] = useState(false);
+
+  const validate = () => {
+    if (!validCPF.test(cpf1)) {
+      setCpfErr(true);
+    } else {
+      setCpfErr(false);
+    }
+  };
 
   if (loading) {
     return <Loading />;

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import InputMask from "react-input-mask";
 import { validCPF } from "../utils/regex";
-import { validRG } from "../utils/regex";
 
 import { createUser } from "../services/api";
 import Loading from "./loading";
@@ -14,8 +13,6 @@ function CreateUser() {
   const [datanasc, setNasc] = useState("");
   const [nomemae, setNameMae] = useState("");
   let navigate = useNavigate();
-
-  console.log(rg, cpf);
 
   const [loading, setLoading] = useState(false);
 
@@ -92,7 +89,11 @@ function CreateUser() {
             setCpf(e.target.value.replaceAll(/[^0-9]/g, ""));
           }}
         />
-        {cpfErr && <p>digite um CPF válido</p>}
+        {cpfErr && (
+          <p className="text-verdin-500 text-lg font-bold">
+            digite um CPF válido
+          </p>
+        )}
 
         <button
           type="button"
@@ -119,7 +120,11 @@ function CreateUser() {
             setRg(e.target.value.replaceAll(/[^0-9]/g, ""));
           }}
         />
-        {rgErr && <p>digite um RG válido</p>}
+        {rgErr && (
+          <p className="text-verdin-500 text-lg font-bold">
+            digite um RG válido
+          </p>
+        )}
         <button
           type="button"
           onClick={(e) => {
