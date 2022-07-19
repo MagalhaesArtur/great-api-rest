@@ -27,7 +27,7 @@ function SearchUserCPF() {
   const [cpfList1, setCpfList1] = useState([]);
 
   const [cpfErr, setCpfErr] = useState(false);
-  console.log(cpfErr, cpfList);
+  console.log(cpfErr, cpfList1);
 
   const validate = () => {
     if (!validCPF.test(cpf1)) {
@@ -130,7 +130,7 @@ function SearchUserCPF() {
               </div>
             </div>
 
-            {cpfList == [] ? (
+            {cpfList1 == [] ? (
               <div>NENHUM USUÁRIO ENCONTRADO</div>
             ) : !loading2 ? (
               cpfList1.map((user: any) => (
