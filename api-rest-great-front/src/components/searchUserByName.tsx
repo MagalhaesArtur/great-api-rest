@@ -10,6 +10,8 @@ function SearchUserByName() {
 
   const [cpfList1, setCpfList1]: any = useState([]);
 
+  const [aux, setAux2] = useState(false);
+
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
 
@@ -63,6 +65,7 @@ function SearchUserByName() {
             className="p-2  w-[150px] rounded-xl font-bold bg-verdin-500 border-2 border-transparent text-roxin-500 hover:bg-nsei-500 hover:border-verdin-500 hover:text-verdin-500 transition-all"
             onClick={async () => {
               setLoading(true);
+              setAux2(true);
               try {
                 await axios
                   .get(import.meta.env.VITE_API_URL + "/user", {
@@ -83,6 +86,10 @@ function SearchUserByName() {
                       }
                     }
                     setCpfList1(lista);
+
+                    if (lista.length != 0) {
+                      setAux2(false);
+                    }
 
                     setLoading2(false);
                   });
@@ -117,16 +124,24 @@ function SearchUserByName() {
                 D. DE NASCIMENTO
               </div>
             </div>
-            {cpfList1.map((user: any) => (
-              <div className="flex w-[100%] gap-x-6 text-verdin-500 mb-3">
-                <div className="text-center w-[15%]">{user.nome}</div>
-                <div className="text-center w-[15%]">{user.rg}</div>
-                <div className="text-center w-[15%]">{user.cpf}</div>
-                <div className="text-center w-[15%]">{user.datacadas}</div>
-                <div className="text-center w-[15%]">{user.nomemae}</div>
-                <div className="text-center w-[15%]">{user.datanasc}</div>
-              </div>
-            ))}
+            {cpfList1.length == 0 ? (
+              aux ? (
+                <div className="text-verdin-500 text-lg font-bold">
+                  NENHUM USUÁRIO ENCONTRADO
+                </div>
+              ) : undefined
+            ) : !loading2 ? (
+              cpfList1.map((user: any) => (
+                <div className="flex w-[100%] gap-x-6 text-verdin-500 mb-3">
+                  <div className="text-center w-[15%]">{user.nome}</div>
+                  <div className="text-center w-[15%]">{user.rg}</div>
+                  <div className="text-center w-[15%]">{user.cpf}</div>
+                  <div className="text-center w-[15%]">{user.datacadas}</div>
+                  <div className="text-center w-[15%]">{user.nomemae}</div>
+                  <div className="text-center w-[15%]">{user.datanasc}</div>
+                </div>
+              ))
+            ) : undefined}
           </div>
         </div>
       </div>

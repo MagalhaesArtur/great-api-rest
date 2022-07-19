@@ -139,7 +139,9 @@ function SearchUserCPF() {
 
             {cpfList1.length == 0 ? (
               aux ? (
-                <div>NENHUM USUÁRIO ENCONTRADO</div>
+                <div className="text-verdin-500 text-lg font-bold">
+                  NENHUM USUÁRIO ENCONTRADO
+                </div>
               ) : undefined
             ) : !loading2 ? (
               cpfList1.map((user: any) => (
