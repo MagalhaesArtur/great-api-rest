@@ -77,6 +77,8 @@ function SearchUserCPF() {
             onClick={async () => {
               validate();
               if (!validCPF) {
+                setLoading(true);
+
                 try {
                   await axios
                     .get(import.meta.env.VITE_API_URL + "/user", {
@@ -99,7 +101,6 @@ function SearchUserCPF() {
                 }
                 setLoading(false);
               }
-              setLoading(true);
             }}
           >
             CONSULTAR
