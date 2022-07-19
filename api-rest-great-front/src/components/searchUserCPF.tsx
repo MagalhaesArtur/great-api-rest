@@ -28,6 +28,7 @@ function SearchUserCPF() {
 
   const [cpfErr, setCpfErr] = useState(false);
   console.log(cpfList1 === []);
+  console.log(cpfList1, []);
 
   const validate = () => {
     if (!validCPF.test(cpf1)) {
@@ -94,6 +95,7 @@ function SearchUserCPF() {
                         return cpf == cpf1;
                       });
                       setCpfList1(lista);
+                      console.log(lista);
 
                       setLoading2(false);
                     });
