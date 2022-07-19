@@ -27,8 +27,7 @@ function SearchUserCPF() {
   const [cpfList1, setCpfList1] = useState([]);
 
   const [cpfErr, setCpfErr] = useState(false);
-  console.log(cpfList1 === []);
-  console.log(cpfList1, []);
+  console.log(cpfErr, cpfList1);
 
   const validate = () => {
     if (!validCPF.test(cpf1)) {
@@ -95,7 +94,6 @@ function SearchUserCPF() {
                         return cpf == cpf1;
                       });
                       setCpfList1(lista);
-                      console.log(lista);
 
                       setLoading2(false);
                     });
@@ -132,7 +130,20 @@ function SearchUserCPF() {
               </div>
             </div>
 
-            {cpfList1 == [] ? <div>NENHUM USUÁRIO ENCONTRADO</div> : undefined}
+            {cpfList1.length == 0 ? (
+              <div>NENHUM USUÁRIO ENCONTRADO</div>
+            ) : !loading2 ? (
+              cpfList1.map((user: any) => (
+                <div className="flex w-[100%] gap-x-6 text-verdin-500 mb-3">
+                  <div className="text-center w-[15%]">{user.nome}</div>
+                  <div className="text-center w-[15%]">{user.rg}</div>
+                  <div className="text-center w-[15%]">{user.cpf}</div>
+                  <div className="text-center w-[15%]">{user.datacadas}</div>
+                  <div className="text-center w-[15%]">{user.nomemae}</div>
+                  <div className="text-center w-[15%]">{user.datanasc}</div>
+                </div>
+              ))
+            ) : undefined}
           </div>
         </div>
       </div>
@@ -141,16 +152,3 @@ function SearchUserCPF() {
 }
 
 export default SearchUserCPF;
-
-// !loading2 ? (
-//   cpfList1.map((user: any) => (
-//     <div className="flex w-[100%] gap-x-6 text-verdin-500 mb-3">
-//       <div className="text-center w-[15%]">{user.nome}</div>
-//       <div className="text-center w-[15%]">{user.rg}</div>
-//       <div className="text-center w-[15%]">{user.cpf}</div>
-//       <div className="text-center w-[15%]">{user.datacadas}</div>
-//       <div className="text-center w-[15%]">{user.nomemae}</div>
-//       <div className="text-center w-[15%]">{user.datanasc}</div>
-//     </div>
-//   ))
-// )
