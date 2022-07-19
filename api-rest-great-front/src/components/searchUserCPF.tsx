@@ -76,28 +76,30 @@ function SearchUserCPF() {
             className="p-2 w-[150px] rounded-xl font-bold bg-verdin-500 border-2 border-transparent text-roxin-500 hover:bg-nsei-500 hover:border-verdin-500 hover:text-verdin-500 transition-all"
             onClick={async () => {
               validate();
-              setLoading(true);
-              try {
-                await axios
-                  .get(import.meta.env.VITE_API_URL + "/user", {
-                    data: { cpf1 },
-                  })
-                  .then((response) => {
-                    setCpfList(response.data);
+              if (!validCPF) {
+                try {
+                  await axios
+                    .get(import.meta.env.VITE_API_URL + "/user", {
+                      data: { cpf1 },
+                    })
+                    .then((response) => {
+                      setCpfList(response.data);
 
-                    setLoading2(true);
+                      setLoading2(true);
 
-                    const lista = cpfList.filter(({ cpf }) => {
-                      return cpf == cpf1;
+                      const lista = cpfList.filter(({ cpf }) => {
+                        return cpf == cpf1;
+                      });
+                      setCpfList1(lista);
+
+                      setLoading2(false);
                     });
-                    setCpfList1(lista);
-
-                    setLoading2(false);
-                  });
-              } catch (error) {
-                console.log(error);
+                } catch (error) {
+                  console.log(error);
+                }
+                setLoading(false);
               }
-              setLoading(false);
+              setLoading(true);
             }}
           >
             CONSULTAR
