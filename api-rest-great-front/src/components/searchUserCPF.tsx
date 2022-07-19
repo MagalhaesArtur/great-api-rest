@@ -37,6 +37,10 @@ function SearchUserCPF() {
     }
   };
 
+  useEffect(() => {
+    validate();
+  }, [cpf1]);
+
   if (loading) {
     return <Loading />;
   } else {
@@ -73,7 +77,6 @@ function SearchUserCPF() {
             type="submit"
             className="p-2 w-[150px] rounded-xl font-bold bg-verdin-500 border-2 border-transparent text-roxin-500 hover:bg-nsei-500 hover:border-verdin-500 hover:text-verdin-500 transition-all"
             onClick={async () => {
-              validate();
               if (!cpfErr) {
                 setLoading(true);
 
