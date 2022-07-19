@@ -24,6 +24,8 @@ function SearchUserCPF() {
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
 
+  const [aux, setAux2] = useState(false);
+
   const [cpfList1, setCpfList1] = useState([]);
 
   const [cpfErr, setCpfErr] = useState(false);
@@ -79,6 +81,7 @@ function SearchUserCPF() {
             onClick={async () => {
               if (!cpfErr) {
                 setLoading(true);
+                setAux2(true);
 
                 try {
                   await axios
@@ -94,6 +97,10 @@ function SearchUserCPF() {
                         return cpf == cpf1;
                       });
                       setCpfList1(lista);
+
+                      if (lista.length != 0) {
+                        setAux2(false);
+                      }
 
                       setLoading2(false);
                     });
@@ -131,7 +138,7 @@ function SearchUserCPF() {
             </div>
 
             {cpfList1.length == 0 ? (
-              loading ? (
+              aux ? (
                 <div>NENHUM USUÁRIO ENCONTRADO</div>
               ) : undefined
             ) : !loading2 ? (
