@@ -16,8 +16,11 @@ Link: https://great-api-rest.vercel.app/
     <h3>Web APP:</h3>
        <p style="display: flex; margin-top: 5px;" >
         <img src="./api-rest-great-front/src/assets/gif1.gif" alt="">
+           <hr/>
         <img src="./api-rest-great-front/src/assets/gif2.gif"  alt="">
+           <hr/>
         <img src="./api-rest-great-front/src/assets/gif3.gif"  alt="">
+           <hr/>
         <img src="./api-rest-great-front/src/assets/gif4.gif"  alt="">
     </p>
     <hr/>
