@@ -27,12 +27,14 @@ function SearchUserByName() {
       for (let nome of lista1) {
         if (nome == name1) {
           lista.push(user);
+        } else {
+          lista = [];
         }
       }
     }
     setCpfList1(lista);
 
-    if (lista.length == undefined) {
+    if (lista.length != 0) {
       setAux2(false);
     }
 
@@ -88,12 +90,14 @@ function SearchUserByName() {
                       for (let nome of lista1) {
                         if (nome == name1) {
                           lista.push(user);
+                        } else {
+                          lista = [];
                         }
                       }
                     }
                     setCpfList1(lista);
 
-                    if (lista.length == undefined) {
+                    if (lista.length != 0) {
                       setAux2(false);
                     }
 
