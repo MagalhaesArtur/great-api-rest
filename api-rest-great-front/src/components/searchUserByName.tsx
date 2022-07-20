@@ -32,7 +32,7 @@ function SearchUserByName() {
     }
     setCpfList1(lista);
 
-    if (lista.length != undefined) {
+    if (lista.length == undefined) {
       setAux2(false);
     }
 
@@ -93,7 +93,7 @@ function SearchUserByName() {
                     }
                     setCpfList1(lista);
 
-                    if (lista.length != undefined) {
+                    if (lista.length == undefined) {
                       setAux2(false);
                     }
 
