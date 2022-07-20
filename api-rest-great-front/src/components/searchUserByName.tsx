@@ -21,14 +21,12 @@ function SearchUserByName() {
     setLoading2(true);
     setAux2(true);
 
-    let lista: any = Array([]);
+    let lista: any = [];
     for (let user of nameList) {
       let lista1 = user.nome.split(" ");
       for (let nome of lista1) {
         if (nome == name1) {
           lista.push(user);
-        } else {
-          lista = [];
         }
       }
     }
@@ -40,8 +38,6 @@ function SearchUserByName() {
 
     setLoading2(false);
   }, [nameList]);
-
-  const [cpfErr, setCpfErr] = useState(false);
 
   if (loading) {
     return <Loading />;
@@ -84,14 +80,12 @@ function SearchUserByName() {
 
                     setLoading2(true);
 
-                    let lista: any = Array([]);
+                    let lista: any = [];
                     for (let user of nameList) {
                       let lista1 = user.nome.split(" ");
                       for (let nome of lista1) {
                         if (nome == name1) {
                           lista.push(user);
-                        } else {
-                          lista = [];
                         }
                       }
                     }
