@@ -66,7 +66,7 @@ function SearchUserCPF() {
               id="cpf"
               name="cpf"
               mask="999.999.999-99"
-              className="bg-nsei-500 p-2 rounded-xl border-2 border-transparent outline-none transition-all text-white hover:border-verdin-500 active:border-verdin-500 focus:border-verdin-500"
+              className="bg-nsei-500 mb-2 p-2 rounded-xl border-2 border-transparent outline-none transition-all text-white hover:border-verdin-500 active:border-verdin-500 focus:border-verdin-500"
               type="text"
               value={cpf1}
               onChange={(e) => {
