@@ -12,6 +12,8 @@ function SearchUserByName() {
 
   const [aux, setAux2] = useState(false);
 
+  console.log(cpfList1, aux);
+
   const [loading, setLoading] = useState(false);
   const [loading2, setLoading2] = useState(false);
 
