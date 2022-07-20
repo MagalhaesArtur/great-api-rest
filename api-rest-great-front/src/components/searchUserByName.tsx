@@ -32,7 +32,7 @@ function SearchUserByName() {
     }
     setCpfList1(lista);
 
-    if (lista.length != 0) {
+    if (lista.length != undefined) {
       setAux2(false);
     }
 
@@ -66,7 +66,6 @@ function SearchUserByName() {
               setName(e.target.value);
             }}
           />
-          {cpfErr && <p>digite um CPF válido</p>}
           <button
             type="submit"
             className="p-2  w-[150px] rounded-xl font-bold bg-verdin-500 border-2 border-transparent text-roxin-500 hover:bg-nsei-500 hover:border-verdin-500 hover:text-verdin-500 transition-all"
@@ -94,7 +93,7 @@ function SearchUserByName() {
                     }
                     setCpfList1(lista);
 
-                    if (lista.length != 0) {
+                    if (lista.length != undefined) {
                       setAux2(false);
                     }
 
