@@ -17,6 +17,7 @@ function SearchUserByName() {
 
   useEffect(() => {
     setLoading2(true);
+    setAux2(true);
 
     let lista: any = Array([]);
     for (let user of nameList) {
@@ -28,6 +29,10 @@ function SearchUserByName() {
       }
     }
     setCpfList1(lista);
+
+    if (lista.length != 0) {
+      setAux2(false);
+    }
 
     setLoading2(false);
   }, [nameList]);
