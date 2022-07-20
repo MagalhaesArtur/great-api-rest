@@ -15,10 +15,10 @@ Link: https://great-api-rest.vercel.app/
 <div>
     <h3>Web APP:</h3>
        <p style="display: flex; margin-top: 5px;" >
-        <img src="./api-rest-great-front/src/assets/gif1.png" width="24.6%" alt="">
-        <img src="./api-rest-great-front/src/assets/gif2.png" width="24.6%" alt="">
-        <img src="./api-rest-great-front/src/assets/gif3.png" width="24.6%" alt="">
-        <img src="./api-rest-great-front/src/assets/gif4.png" width="24.6%" alt="">
+        <img src="./api-rest-great-front/src/assets/gif1.gif" width="24.6%" alt="">
+        <img src="./api-rest-great-front/src/assets/gif2.gif" width="24.6%" alt="">
+        <img src="./api-rest-great-front/src/assets/gif3.gif" width="24.6%" alt="">
+        <img src="./api-rest-great-front/src/assets/gif4.gif" width="24.6%" alt="">
     </p>
     <hr/>
      
