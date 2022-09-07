@@ -7,11 +7,13 @@ var __importDefault =
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const prisma_1 = require("./prisma");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
-const porta = process.env.PORT || 3333;
+const prisma_1 = require("./prisma");
+
 app.use(express_1.default.json());
+const porta = process.env.PORT || 3333;
+
 app.post("/user", async (req, res) => {
   const { nome, cpf, rg, datanasc, nomemae, datacadas } = req.body;
   const register = await prisma_1.prisma.registro.create({
