@@ -5,7 +5,7 @@ import { prisma } from "./prisma";
 const app = express();
 app.use(cors());
 
-const porta = 7227;
+const porta = process.env.PORT || 3333;
 
 app.use(express.json());
 
