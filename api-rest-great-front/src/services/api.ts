@@ -1,6 +1,9 @@
 import axios from "axios";
 
-export const api = axios.create({ baseURL: import.meta.env.VITE_API_URL });
+export const api = axios.create({
+  baseURL:
+    "postgresql://postgres:Ccqz8pxVhjUG6y64OhLZ@containers-us-west-66.railway.app:7227/railway",
+});
 
 export const createUser = async ({
   nome,
