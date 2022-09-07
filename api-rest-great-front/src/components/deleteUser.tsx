@@ -18,9 +18,11 @@ function DeleteUser() {
   console.log(confirmDelete);
 
   useEffect(() => {
-    axios.get(import.meta.env.VITE_API_URL + "/delete").then((response) => {
-      setUsers(response.data.users);
-    });
+    axios
+      .get("https://great-api-rest-production" + "/delete")
+      .then((response) => {
+        setUsers(response.data.users);
+      });
   }, [loading]);
 
   useEffect(() => {}, [confirmDelete]);

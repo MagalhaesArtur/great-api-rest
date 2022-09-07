@@ -72,7 +72,7 @@ function SearchUserByName() {
               setAux2(true);
               try {
                 await axios
-                  .get(import.meta.env.VITE_API_URL + "/user", {
+                  .get("https://great-api-rest-production" + "/user", {
                     data: { name1 },
                   })
                   .then((response) => {
