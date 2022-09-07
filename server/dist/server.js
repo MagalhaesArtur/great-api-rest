@@ -10,7 +10,7 @@ const cors_1 = __importDefault(require("cors"));
 const prisma_1 = require("./prisma");
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
-const porta = 7227 || 3333;
+const porta = process.env.PORT || 3333;
 app.use(express_1.default.json());
 app.post("/user", async (req, res) => {
   const { nome, cpf, rg, datanasc, nomemae, datacadas } = req.body;
