@@ -1,8 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL:
-    "postgresql://postgres:Ccqz8pxVhjUG6y64OhLZ@containers-us-west-66.railway.app:7227/railway",
+  baseURL: "https://great-api-rest-production/",
 });
 
 export const createUser = async ({
