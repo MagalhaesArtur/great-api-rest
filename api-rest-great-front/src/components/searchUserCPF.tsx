@@ -89,7 +89,7 @@ function SearchUserCPF() {
 
                 try {
                   await axios
-                    .get("https://great-api-rest-production" + "/user", {
+                    .get(import.meta.env.VITE_API_URL + "/user", {
                       data: { cpf1 },
                     })
                     .then((response) => {

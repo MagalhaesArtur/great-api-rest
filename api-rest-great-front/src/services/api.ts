@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://great-api-rest-production/",
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 export const createUser = async ({
