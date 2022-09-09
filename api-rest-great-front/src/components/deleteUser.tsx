@@ -67,6 +67,7 @@ function DeleteUser() {
                   onClick={async () => {
                     setConfirmDeleteAux(true);
                     setUserToDelete(user.cpf);
+                    setConfirmDelete(true);
                   }}
                 >
                   apagar usuário
