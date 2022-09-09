@@ -14,7 +14,6 @@ function ConfirmDelete(props: {
         onClick={async () => {
           console.log(props.cpf);
           props.setConfirmDelete(true);
-          props.setConfirmDeleteAux(false);
           props.setLoading(false);
           await axios
             .delete(import.meta.env.VITE_API_URL + "/delete", {
@@ -22,6 +21,7 @@ function ConfirmDelete(props: {
             })
             .then((response) => {
               console.log(response.data);
+              props.setConfirmDeleteAux(false);
             });
         }}
         className="bg-red-500 hover:bg-red-800 text-white font-bold rounded-xl transition-all"

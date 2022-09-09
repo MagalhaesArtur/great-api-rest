@@ -25,7 +25,7 @@ function DeleteUser() {
     });
   }, [loading]);
 
-  useEffect(() => {}, [confirmDelete]);
+  useEffect(() => {}, [confirmDelete, confirmDeleteAux]);
 
   if (loading) {
     return <Loading />;
