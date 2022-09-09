@@ -1,7 +1,7 @@
 import axios from "axios";
 
 function ConfirmDelete(props: {
-  cpf: number;
+  cpf: string;
   setConfirmDelete: any;
   setConfirmDeleteAux: any;
 }) {

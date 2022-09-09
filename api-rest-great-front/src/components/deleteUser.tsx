@@ -10,7 +10,7 @@ interface teste {
 
 function DeleteUser() {
   const [users, setUsers] = useState([]);
-  const [userToDelete, setUserToDelete] = useState(0);
+  const [userToDelete, setUserToDelete] = useState("");
 
   const [loading, setLoading] = useState(false);
 
