@@ -13,7 +13,6 @@ function ConfirmDelete(props: {
       <button
         onClick={async () => {
           console.log(props.cpf);
-          props.setConfirmDelete(true);
           props.setLoading(false);
           await axios
             .delete(import.meta.env.VITE_API_URL + "/delete", {

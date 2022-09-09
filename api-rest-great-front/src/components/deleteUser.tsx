@@ -23,9 +23,7 @@ function DeleteUser() {
     axios.get(import.meta.env.VITE_API_URL + "/delete").then((response) => {
       setUsers(response.data.users);
     });
-  }, [loading]);
-
-  useEffect(() => {}, [confirmDelete, confirmDeleteAux]);
+  }, [loading, confirmDelete]);
 
   if (loading) {
     return <Loading />;
