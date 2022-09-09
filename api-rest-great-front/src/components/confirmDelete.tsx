@@ -12,6 +12,7 @@ function ConfirmDelete(props: {
       confirmar a deleção
       <button
         onClick={async () => {
+          console.log(props.cpf);
           props.setConfirmDelete(true);
           props.setConfirmDeleteAux(false);
           props.setLoading(false);
