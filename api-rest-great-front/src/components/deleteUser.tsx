@@ -66,6 +66,7 @@ function DeleteUser() {
                   className="bg-red-500 hover:bg-red-800 text-white font-bold rounded-xl transition-all"
                   onClick={async () => {
                     setConfirmDeleteAux(true);
+                    setUserToDelete(user.cpf);
                   }}
                 >
                   apagar usuário
