@@ -70,15 +70,6 @@ function DeleteUser() {
                     if (confirmDelete) {
                       setLoading(true);
 
-                      await axios
-                        .delete(import.meta.env.VITE_API_URL + "/delete", {
-                          data: { cpf: user.cpf },
-                        })
-                        .then((response) => {
-                          setUserToDelete(user.cpf);
-                          console.log(response.data);
-                        });
-
                       setLoading(false);
                       setConfirmDelete(false);
                       setConfirmDeleteAux(false);
