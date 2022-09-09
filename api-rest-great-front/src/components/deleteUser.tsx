@@ -10,6 +10,8 @@ interface teste {
 
 function DeleteUser() {
   const [users, setUsers] = useState([]);
+  const [userToDelete, setUserToDelete] = useState(0);
+
   const [loading, setLoading] = useState(false);
 
   const [confirmDelete, setConfirmDelete] = useState(false);
@@ -73,6 +75,7 @@ function DeleteUser() {
                           data: { cpf: user.cpf },
                         })
                         .then((response) => {
+                          setUserToDelete(user.cpf);
                           console.log(response.data);
                         });
 
@@ -90,6 +93,7 @@ function DeleteUser() {
         </div>
         {confirmDeleteAux ? (
           <ConfirmDelete
+            cpf={userToDelete}
             setConfirmDelete={setConfirmDelete}
             setConfirmDeleteAux={setConfirmDeleteAux}
           />
