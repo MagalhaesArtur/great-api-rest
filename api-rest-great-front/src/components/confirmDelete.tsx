@@ -2,6 +2,7 @@ import axios from "axios";
 
 function ConfirmDelete(props: {
   cpf: string;
+  setLoading: any;
   setConfirmDelete: any;
   setConfirmDeleteAux: any;
 }) {
@@ -13,6 +14,7 @@ function ConfirmDelete(props: {
         onClick={async () => {
           props.setConfirmDelete(true);
           props.setConfirmDeleteAux(false);
+          props.setLoading(false);
           await axios
             .delete(import.meta.env.VITE_API_URL + "/delete", {
               data: { cpf: props.cpf },

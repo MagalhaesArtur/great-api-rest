@@ -66,14 +66,6 @@ function DeleteUser() {
                   className="bg-red-500 hover:bg-red-800 text-white font-bold rounded-xl transition-all"
                   onClick={async () => {
                     setConfirmDeleteAux(true);
-
-                    if (confirmDelete) {
-                      setLoading(true);
-
-                      setLoading(false);
-                      setConfirmDelete(false);
-                      setConfirmDeleteAux(false);
-                    }
                   }}
                 >
                   apagar usuário
@@ -85,6 +77,7 @@ function DeleteUser() {
         {confirmDeleteAux ? (
           <ConfirmDelete
             cpf={userToDelete}
+            setLoading={setLoading}
             setConfirmDelete={setConfirmDelete}
             setConfirmDeleteAux={setConfirmDeleteAux}
           />
