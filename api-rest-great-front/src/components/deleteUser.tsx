@@ -23,7 +23,7 @@ function DeleteUser() {
     axios.get(import.meta.env.VITE_API_URL + "/delete").then((response) => {
       setUsers(response.data.users);
     });
-  }, [loading, confirmDelete]);
+  }, [loading, confirmDeleteAux]);
 
   if (loading) {
     return <Loading />;
@@ -65,7 +65,6 @@ function DeleteUser() {
                   onClick={async () => {
                     setConfirmDeleteAux(true);
                     setUserToDelete(user.cpf);
-                    setConfirmDelete(true);
                   }}
                 >
                   apagar usuário
