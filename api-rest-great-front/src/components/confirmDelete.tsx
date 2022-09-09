@@ -7,7 +7,7 @@ function ConfirmDelete(props: {
   setConfirmDeleteAux: any;
 }) {
   return (
-    <div className="right-[50vw] top-[50vh] absolute w-[200px] h-[200px] p-4 bg-nsei-500 rounded-lg flex flex-col text-white text-justify font-bold">
+    <div className="right-[50vw] top-[50vh]  absolute w-[200px] h-[200px] p-4 bg-nsei-500 rounded-lg flex justify-between flex-col text-white text-justify font-bold">
       Aperte em Confirmar para deletar o usuário
       <button
         onClick={async () => {
