@@ -7,9 +7,8 @@ function ConfirmDelete(props: {
   setConfirmDeleteAux: any;
 }) {
   return (
-    <div className="text-center right-[50vw] top-[50vh] absolute w-[150px] p-4 bg-nsei-500 rounded-lg flex flex-col text-white font-bold">
-      Aperte no botão confirmar e depois aperte em apagar usuário novamente para
-      confirmar a deleção
+    <div className="right-[50vw] top-[50vh] absolute w-[200px] h-[200px] p-4 bg-nsei-500 rounded-lg flex flex-col text-white text-justify font-bold">
+      Aperte em Confirmar para deletar o usuário
       <button
         onClick={async () => {
           console.log(props.cpf);
@@ -23,7 +22,7 @@ function ConfirmDelete(props: {
               props.setConfirmDeleteAux(false);
             });
         }}
-        className="bg-red-500 hover:bg-red-800 text-white font-bold rounded-xl transition-all"
+        className="bg-red-500 hover:bg-red-800 text-white font-bold rounded-md  transition-all"
       >
         {" "}
         confirmar
